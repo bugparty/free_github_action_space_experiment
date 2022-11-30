@@ -1,0 +1,19 @@
+name: Test how much space we can free
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: df -h
+      - run: sudo rm -rf /usr/share/dotnet 
+      - run: df -h
+      - run: sudo rm -rf /usr/local/lib/android
+      - run: df -h
+      - run: sudo rm -rf /opt/ghc
+      - run: df -h
+      - run: sudo rm -rf /usr/local/share/edge_driver /usr/local/share/chrome_driver
+      - run: df -h
+      - run: docker system prune -a
+      - run: df -h
